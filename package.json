@@ -1,0 +1,19 @@
+{
+  "name": "fortnitecloneserve",
+  "version": "1.0.0",
+  "description": "Creating",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenriqueSantos2022/FortniteCloneServe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenriqueSantos2022/FortniteCloneServe/issues"
+  },
+  "homepage": "https://github.com/HenriqueSantos2022/FortniteCloneServe#readme"
+}
