@@ -33,8 +33,8 @@ app.use('/users/', require('./routes/users'));
 // CONFIGURA RESPOSTA PADRAO QUANDO NAO EXISTE O ENDPOINT 
 //======================================================================
 app.use((req, res, next) => {
-    const err = { message: "Rota noa existe ", status: 404, code: "001" };
-    const error = new error(err.message)
+    const err = { message: "Rota nao existe ", status: 404, code: "001" };
+    const error = new Error(err.message)
     error.status = err.status;
     error.code = err.code;
     next(error);
@@ -58,4 +58,4 @@ app.use((req, res, next) => {
 //======================================================================
 
 let server = http.createServer(app);
-server.listen(port, () => console.log('Runing in http://localhost:${port}'));
+server.listen(port, () => console.log(`Example app listening on port ${port}`));

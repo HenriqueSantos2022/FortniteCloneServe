@@ -100,6 +100,11 @@
   "resolved" "https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz"
   "version" "1.2.0"
 
+"dockerfile@^0.1.1":
+  "integrity" "sha512-Rzt/det+QVhJn/SZiLIoNSMvoKu2lC5P9KNCtfPOJYC6bUACUzYehODxczot1ihA4XCd4MI34uwnUUK+JEODaA=="
+  "resolved" "https://registry.npmjs.org/dockerfile/-/dockerfile-0.1.1.tgz"
+  "version" "0.1.1"
+
 "dotenv@^16.0.1":
   "integrity" "sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ=="
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.0.1.tgz"
