@@ -6,18 +6,17 @@ const Users = require("../models/users");
 //=====================================================================
 // EXPORTS CRUD 
 //=====================================================================
-
-exports.signup = (req, res,) => {
-    //const user = await Users.create(req.body);
-    //  return res.json({ user });
-    res.send("signup");
-    return
+exports.signup = async (req, res, next) => {
+    try {
+        const user = await Users.create(req.body);
+        delete user.password
+        return res.json({ user });
+    } catch (error) {
+        error = new Error(error);
+        error.status = error.statusCode;
+        error.code = error.code;
+        next(error);
+    }
 };
 
-exports.rota2 = (req, res,) => {
-    //const user = await Users.create(req.body);
-    //  return res.json({ user });
-    res.send(Users.signup());
-    return
-};
 
