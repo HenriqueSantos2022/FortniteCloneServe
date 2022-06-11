@@ -1,5 +1,5 @@
 //=====================================================================
-// CARREGA O ENV. CASO NÃO SEJA SERVELESS 
+// CARREGA O ENV. CASO NÃO SEJA SERVELESS
 //=====================================================================
 require('dotenv').config();
 const express = require('express');
@@ -15,14 +15,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 //======================================================================
-//  CONFIGURA AS ROTAS FIXAS 
+//  CONFIGURA AS ROTAS FIXAS
 //======================================================================
 app.get('/', (req, res) => {
-    res.json({ status: 200, message: "im fine!" });
+  res.json({ status: 200, message: 'im fine!' });
 });
 
-app.get("/health-check", (req, res) => {
-    res.json({ status: 200, message: "im fine!" });
+app.get('/health-check', (req, res) => {
+  res.json({ status: 200, message: 'im fine!' });
 });
 
 //======================================================================
@@ -31,31 +31,31 @@ app.get("/health-check", (req, res) => {
 app.use('/users/', require('./routes/users'));
 
 //======================================================================
-// CONFIGURA RESPOSTA PADRAO QUANDO NAO EXISTE O ENDPOINT 
+// CONFIGURA RESPOSTA PADRAO QUANDO NAO EXISTE O ENDPOINT
 //======================================================================
 app.use((req, res, next) => {
-    const err = { message: "Rota nao existe ", status: 404, code: "001" };
-    const error = new Error(err.message)
-    error.status = err.status;
-    error.code = err.code;
-    next(error);
+  const err = { message: 'Rota nao existe ', status: 404, code: '001' };
+  const error = new Error(err.message);
+  error.status = err.status;
+  error.code = err.code;
+  next(error);
 });
 
 //======================================================================
 // CONFIGURA O FORMATO DA RESPOSTA PADRAO DE ERRO
 //======================================================================
 app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    res.json({
-        error: {
-            code: error.code,
-            message: error.message,
-        },
-    });
+  res.status(error.status || 500);
+  res.json({
+    error: {
+      code: error.code,
+      message: error.message,
+    },
+  });
 });
 
 //======================================================================
-// SUPORTE PARA SERVELESS & SERVER 
+// SUPORTE PARA SERVELESS & SERVER
 //======================================================================
 
 let server = http.createServer(app);

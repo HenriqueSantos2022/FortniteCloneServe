@@ -4,7 +4,8 @@
   "description": "Creating",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon ."
+    "start": "nodemon .",
+    "prepare": "yarn start prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "express": "^4.18.1",
     "http": "^0.0.1-security",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "prettier": "2.6.2"
   }
 }

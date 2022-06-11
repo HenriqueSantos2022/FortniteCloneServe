@@ -1,44 +1,43 @@
 //==========================================================================
-// IMPORTACAO DE BIBLIOTECA https://dynamoosejs.com/getting_started/Import/    
+// IMPORTACAO DE BIBLIOTECA https://dynamoosejs.com/getting_started/Import/
 //==========================================================================
 
-const dynamoose = require("dynamoose");
+const dynamoose = require('dynamoose');
 
 //==================================
-// CONFIGURA HOST DO BANCO DE DADOS    
+// CONFIGURA HOST DO BANCO DE DADOS
 //==================================
 dynamoose.aws.sdk.config.update({
-    region: 'use-east-1',
-    accessKeyId: 'xxxx',
-    secretAccessKey: 'xxxx',
+  region: 'use-east-1',
+  accessKeyId: 'xxxx',
+  secretAccessKey: 'xxxx',
 });
 
 dynamoose.aws.ddb.local();
 
 //==================================
-// CONFIGURA OS CAMPOS DA TABELA 
+// CONFIGURA OS CAMPOS DA TABELA
 //==================================
 const User = new dynamoose.Schema(
-    {
-        email: {
-            type: String,
-            hashKey: true,
-        },
-
-        name: {
-            type: String,
-            required: true,
-        },
-
-        password: {
-            type: String,
-            required: true,
-        },
+  {
+    email: {
+      type: String,
+      hashKey: true,
     },
-    {
-        timestamps: true,
+
+    name: {
+      type: String,
+      required: true,
     },
+
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  },
 );
 
 module.exports = dynamoose.model(`User`, User);
-
