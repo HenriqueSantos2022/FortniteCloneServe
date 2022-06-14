@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon .",
-    "prepare": "yarn start prettier --write ."
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/HenriqueSantos2022/FortniteCloneServe#readme",
   "dependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dockerfile": "^0.1.1",
@@ -28,6 +30,18 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
     "prettier": "2.6.2"
-  }
+  },
+  "lint-staged": {
+    "**//*": "prettier --write --ignore-unknow"
+  },
+   "husky": {
+  "hooks": {
+  "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
 }
+}
+}
+
+
