@@ -1,12 +1,12 @@
-//==========================================================================
+// ==========================================================================
 // IMPORTACAO DE BIBLIOTECA https://dynamoosejs.com/getting_started/Import/
-//==========================================================================
+// ==========================================================================
 
 const dynamoose = require('dynamoose');
 
-//==================================
+// ==================================
 // CONFIGURA HOST DO BANCO DE DADOS
-//==================================
+// ==================================
 dynamoose.aws.sdk.config.update({
   region: 'use-east-1',
   accessKeyId: 'xxxx',
@@ -15,9 +15,9 @@ dynamoose.aws.sdk.config.update({
 
 dynamoose.aws.ddb.local();
 
-//==================================
+// ==================================
 // CONFIGURA OS CAMPOS DA TABELA
-//==================================
+// ==================================
 const User = new dynamoose.Schema(
   {
     email: {
@@ -40,4 +40,4 @@ const User = new dynamoose.Schema(
   },
 );
 
-module.exports = dynamoose.model(`User`, User);
+module.exports = dynamoose.model('User', User);

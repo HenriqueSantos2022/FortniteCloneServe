@@ -1,5 +1,5 @@
 {
   "verbose": true,
-  "ignore": [".git",".husky", "node_modules/**/node_modules"],
+  "ignore": [".git", ".husky", "node_modules/**/node_modules"],
   "delay": 1000
 }

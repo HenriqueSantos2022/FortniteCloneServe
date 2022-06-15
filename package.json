@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon .",
+    "lint": "yarn eslint .",
     "prepare": "husky install"
   },
   "repository": {
@@ -30,18 +31,22 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
     "husky": "^8.0.1",
+    "lint": "^0.7.0",
     "lint-staged": "^13.0.1",
-    "prettier": "2.6.2"
+    "pre-push": "^0.1.2",
+    "prettier": "2.6.2",
+    "staged": "^0.0.0"
   },
   "lint-staged": {
     "**//*": "prettier --write --ignore-unknow"
   },
-   "husky": {
-  "hooks": {
-  "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }
-}
-}
-
-
