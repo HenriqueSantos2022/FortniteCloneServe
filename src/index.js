@@ -29,6 +29,7 @@ app.get('/health-check', (req, res) => {
 // CONFIGURA AS ROTAS CUSTOMIZAVEIS
 // ======================================================================
 app.use('/users/', require('./routes/users'));
+app.use('/restaurants/', require('./routes/restaurants'));
 
 // ======================================================================
 // CONFIGURA RESPOSTA PADRAO QUANDO NAO EXISTE O ENDPOINT
