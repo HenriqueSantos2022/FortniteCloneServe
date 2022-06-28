@@ -11,3 +11,12 @@ exports.sanitize = function (obj = {}) {
     if (typeof localObj[element] === 'string') localObj[element] = localObj[element].sanitize();
   }
 };
+
+exports.validateEmail = function (email) {
+  const out = String(email)
+    .toLowerCase()
+    .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+
+  if (out) return true;
+  return false;
+};
