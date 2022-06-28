@@ -2,12 +2,16 @@
 // IMPORTS
 // =====================================================================
 const Users = require('../models/users');
+const Utils = require('../utils/utils');
+const bcrypt = require('bcrypt');
 
 // =====================================================================
 // EXPORTS CRUD
 // =====================================================================
 exports.signup = async (req, res, next) => {
   try {
+    Utils.sanitize(req.body);
+    req.body.password = await bcrypt.hash(req.body.password, 10);
     const user = await Users.create(req.body);
     delete user.password;
     res.json({ user });
@@ -21,9 +25,10 @@ exports.signup = async (req, res, next) => {
 
 exports.signin = async (req, res, next) => {
   try {
-    const user = await Users.get(req.body.email);
+    Utils.sanitize(req.body);
 
-    if (user && user.password === req.body.password) {
+    const user = await Users.get(req.body.email);
+    if (user && (await bcrypt.compareSync(req.body.password, user.password))) {
       delete user.password;
       res.json({ user });
     } else {
