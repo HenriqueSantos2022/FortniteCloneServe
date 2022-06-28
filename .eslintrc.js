@@ -10,6 +10,7 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
+    'no-extend-native': 'off',
     'no-restricted-syntax': [
       'error',
       {

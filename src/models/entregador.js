@@ -7,18 +7,14 @@ const dynamoose = require('dynamoose');
 // ==================================
 // CONFIGURA HOST DO BANCO DE DADOS
 // ==================================
-dynamoose.aws.sdk.config.update({
-  region: 'use-east-1',
-  accessKeyId: 'xxxx',
-  secretAccessKey: 'xxxx',
-});
+dynamoose.aws.sdk.config.update({});
 
 dynamoose.aws.ddb.local();
 
-// ==================================
-// CONFIGURA OS CAMPOS DA TABELA
-// ==================================
-const Restaurant = new dynamoose.Schema(
+// ===============================================
+// CONFIGURA OS CAMPOS DA TABELA DO BANCO DE DADOS
+// ===============================================
+const entregador = new dynamoose.Schema(
   {
     id: {
       type: String,
@@ -31,19 +27,32 @@ const Restaurant = new dynamoose.Schema(
       required: true,
     },
 
-    cnpj: {
+    email: {
       type: String,
       required: true,
     },
 
-    owner: {
+    datadenascimento: {
+      type: String,
+      required: true,
+    },
+
+    idade: {
+      type: String,
+      required: true,
+    },
+
+    rg: {
+      type: String,
+      required: true,
+    },
+
+    cpf: {
       type: String,
       required: true,
     },
   },
-  {
-    timestamps: true,
-  },
+  {},
 );
 
-module.exports = dynamoose.model('Restaurant', Restaurant);
+module.exports = dynamoose.model('entregador', entregador);

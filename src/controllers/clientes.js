@@ -1,20 +1,15 @@
-String.prototype.sanitize = function () {
-  return this.replace(/  +/g, ' ').trim();
-};
 // =====================================================================
 // IMPORTS
 // =====================================================================
-const Restaurants = require('../models/restaurants');
+const clientes = require('../models/clientes');
 
 // =====================================================================
 // EXPORTS CRUD
 // =====================================================================
 exports.create = async (req, res, next) => {
   try {
-    req.body.name = req.body.name.sanitize();
-    req.body.cnpj = req.body.cnpj.sanitize();
-    const restaurant = await Restaurants.create(req.body);
-    res.json({ restaurant });
+    const cliente = await clientes.create(req.body);
+    res.json({ cliente });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
@@ -25,8 +20,8 @@ exports.create = async (req, res, next) => {
 
 exports.get = async (req, res, next) => {
   try {
-    const restaurant = await Restaurants.get(req.params.id);
-    res.json({ restaurant });
+    const cliente = await clientes.get(req.params.id);
+    res.json({ cliente });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
@@ -37,8 +32,8 @@ exports.get = async (req, res, next) => {
 
 exports.update = async (req, res, next) => {
   try {
-    const restaurant = await Restaurants.update({ id: req.params.id }, req.body);
-    res.json({ restaurant });
+    const cliente = await clientes.update({ id: req.params.id }, req.body);
+    res.json({ cliente });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
@@ -49,7 +44,7 @@ exports.update = async (req, res, next) => {
 
 exports.delete = async (req, res, next) => {
   try {
-    await Restaurants.delete(req.params.id);
+    await clientes.delete(req.params.id);
     res.json({});
   } catch (err) {
     const error = new Error(err);
@@ -61,7 +56,7 @@ exports.delete = async (req, res, next) => {
 
 exports.list = async (req, res, next) => {
   try {
-    res.json({ todo: new Date(), userId: req.params.userId });
+    res.json({ todo: new Date(), clienteid: req.params.clienteid });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
