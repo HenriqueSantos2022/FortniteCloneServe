@@ -2,12 +2,14 @@
 // IMPORTS
 // =====================================================================
 const clientes = require('../models/clientes');
+const Utils = require('../utils/utils');
 
 // =====================================================================
 // EXPORTS CRUD
 // =====================================================================
 exports.create = async (req, res, next) => {
   try {
+    Utils.sanitize(req.body);
     const cliente = await clientes.create(req.body);
     res.json({ cliente });
   } catch (err) {

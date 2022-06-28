@@ -1,18 +1,15 @@
-String.prototype.sanitize = function () {
-  return this.replace(/  +/g, ' ').trim();
-};
 // =====================================================================
 // IMPORTS
 // =====================================================================
 const Restaurants = require('../models/restaurants');
+const Utils = require('../utils/utils');
 
 // =====================================================================
 // EXPORTS CRUD
 // =====================================================================
 exports.create = async (req, res, next) => {
   try {
-    req.body.name = req.body.name.sanitize();
-    req.body.cnpj = req.body.cnpj.sanitize();
+    Utils.sanitize(req.body);
     const restaurant = await Restaurants.create(req.body);
     res.json({ restaurant });
   } catch (err) {
@@ -25,6 +22,8 @@ exports.create = async (req, res, next) => {
 
 exports.get = async (req, res, next) => {
   try {
+    Utils.sanitize(req.params);
+
     const restaurant = await Restaurants.get(req.params.id);
     res.json({ restaurant });
   } catch (err) {
@@ -37,6 +36,9 @@ exports.get = async (req, res, next) => {
 
 exports.update = async (req, res, next) => {
   try {
+    Utils.sanitize(req.params);
+    Utils.sanitize(req.body);
+
     const restaurant = await Restaurants.update({ id: req.params.id }, req.body);
     res.json({ restaurant });
   } catch (err) {
@@ -49,6 +51,8 @@ exports.update = async (req, res, next) => {
 
 exports.delete = async (req, res, next) => {
   try {
+    Utils.sanitize(req.params);
+
     await Restaurants.delete(req.params.id);
     res.json({});
   } catch (err) {
@@ -61,6 +65,8 @@ exports.delete = async (req, res, next) => {
 
 exports.list = async (req, res, next) => {
   try {
+    Utils.sanitize(req.params);
+
     res.json({ todo: new Date(), userId: req.params.userId });
   } catch (err) {
     const error = new Error(err);
