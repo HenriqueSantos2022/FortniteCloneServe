@@ -11,6 +11,7 @@ const Utils = require('../utils/utils');
 exports.signup = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
+
     req.body.password = await bcrypt.hash(req.body.password, 10);
     const user = await Users.create(req.body);
     delete user.password;
