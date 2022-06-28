@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-extend-native': 'off',
+    'func-names': 'off',
     'no-restricted-syntax': [
       'error',
       {
