@@ -9,14 +9,8 @@ const Utils = require('../utils/utils');
 exports.create = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
-    if (Utils.validateEmail(req.body.email)) {
-      const entregador = await Entregador.create(req.body);
-      res.json({ entregador });
-    } else {
-      const error = new Error('email não e valido');
-      error.status = error.statusCode;
-      next(error);
-    }
+    const entregador = await Entregador.create(req.body);
+    res.json({ entregador });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
