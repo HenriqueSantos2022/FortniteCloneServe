@@ -1,0 +1,554 @@
+{
+	"info": {
+		"_postman_id": "e33cfab0-9613-4c6f-b37d-fe8c5a16b8f0",
+		"name": "Wefood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20872563"
+	},
+	"item": [
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Restaurante 005",
+									"type": "text"
+								},
+								{
+									"key": "cnpj",
+									"value": "MY-CNPJ",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "OWNER-ID",
+									"type": "text"
+								},
+								{
+									"key": "idade",
+									"value": "18",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ddk.claudio@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server-local}}/restaurants/",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"restaurants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server-local}}/restaurants/135be5c3-db04-485f-b435-6389a99c44e9",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"restaurants",
+								"135be5c3-db04-485f-b435-6389a99c44e9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Restaurante 003",
+									"type": "text"
+								},
+								{
+									"key": "cnpj",
+									"value": "MY-CNPJ",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "OWNER-ID",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server-local}}/restaurants/135be5c3-db04-485f-b435-6389a99c44e9",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"restaurants",
+								"135be5c3-db04-485f-b435-6389a99c44e9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server-local}}/restaurants/135be5c3-db04-485f-b435-6389a99c44e9",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"restaurants",
+								"135be5c3-db04-485f-b435-6389a99c44e9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server-local}}/restaurants/list/:id",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"restaurants",
+								"list",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "         Claudio            Fernandes      ",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "senha-segura",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ddk.claudi1234@outlook.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server-local}}/users/signup",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "         Claudio            Fernandes      ",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "        senha-segura        ",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ddk.claudi12o@outlook.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server-local}}/users/signin",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Claudio5",
+									"type": "text"
+								},
+								{
+									"key": "datadenascimento",
+									"value": "5/13/1974",
+									"type": "text"
+								},
+								{
+									"key": "idade",
+									"value": "28",
+									"type": "text"
+								},
+								{
+									"key": "rg",
+									"value": "33.644.479-5",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "977.659.010-10",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "dfhejhaerhergerheaj",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server-local}}/clientes/78dfc714-defd-47e2-b283-7ed878ac671f",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"clientes",
+								"78dfc714-defd-47e2-b283-7ed878ac671f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Suely Galão",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server-local}}/clientes/78dfc714-defd-47e2-b283-7ed878ac671f",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"clientes",
+								"78dfc714-defd-47e2-b283-7ed878ac671f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{server-local}}/clientes/6af4d4ad-031e-4feb-b9f2-061a0684dea1",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"clientes",
+								"6af4d4ad-031e-4feb-b9f2-061a0684dea1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entregadores",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Mari Silva",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "maria12@gmail.com ",
+									"type": "text"
+								},
+								{
+									"key": "datadenascimento",
+									"value": "16/01/2001",
+									"type": "text"
+								},
+								{
+									"key": "idade",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "rg",
+									"value": "388851326",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "46825695894",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server-local}}/entregador",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"entregador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server-local}}/entregador/b0dc8b81-98e7-4461-a9e0-95a2b0aaa0bd",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"entregador",
+								"b0dc8b81-98e7-4461-a9e0-95a2b0aaa0bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Maria Silva",
+									"type": "text"
+								},
+								{
+									"key": "email ",
+									"value": "MariaElizia@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "datadenascimento",
+									"value": "16/01/2001",
+									"type": "text"
+								},
+								{
+									"key": "idade",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "rg",
+									"value": "399951327",
+									"type": "text"
+								},
+								{
+									"key": "cpf",
+									"value": "12325695896",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server-local}}/entregador/b0dc8b81-98e7-4461-a9e0-95a2b0aaa0bd",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"entregador",
+								"b0dc8b81-98e7-4461-a9e0-95a2b0aaa0bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{server-local}}/entregador/7fbe05ac-1d17-459c-9e50-5e71ad5c24eb",
+							"host": [
+								"{{server-local}}"
+							],
+							"path": [
+								"entregador",
+								"7fbe05ac-1d17-459c-9e50-5e71ad5c24eb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server-local}}/",
+					"host": [
+						"{{server-local}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server-local}}/health-check",
+					"host": [
+						"{{server-local}}"
+					],
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

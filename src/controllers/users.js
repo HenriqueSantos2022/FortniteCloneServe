@@ -11,11 +11,15 @@ const Utils = require('../utils/utils');
 exports.signup = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
-
-    req.body.password = await bcrypt.hash(req.body.password, 10);
-    const user = await Users.create(req.body);
-    delete user.password;
-    res.json({ user });
+    if (Utils.validateEmail(req.body.email)) {
+      req.body.password = await bcrypt.hash(req.body.password, 10);
+      const user = await Users.create(req.body);
+      delete user.password;
+      res.json({ user });
+    } else {
+      const error = new Error('Email não e valido');
+      next(error);
+    }
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
