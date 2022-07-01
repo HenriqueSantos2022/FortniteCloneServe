@@ -14,7 +14,7 @@ dynamoose.aws.ddb.local();
 //= =========================================================================
 // CONFIGURA OS CAMPOS DA TABELA DO BANCO DE
 //= =========================================================================
-const deliverymans = new dynamoose.Schema(
+const Deliveryman = new dynamoose.Schema(
   {
     id: {
       type: String,
@@ -50,4 +50,4 @@ const deliverymans = new dynamoose.Schema(
   {},
 );
 
-module.exports = dynamoose.model('deliveryman', deliverymans);
+module.exports = dynamoose.model('deliveryman', Deliveryman);

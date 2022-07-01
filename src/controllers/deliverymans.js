@@ -1,7 +1,7 @@
 //= ====================================================================
 // IMPORTS
 //= ====================================================================
-const deliveryman = require('../models/deliverymans');
+const Deliveryman = require('../models/deliverymans');
 const Utils = require('../utils/utils');
 
 //= ====================================================================
