@@ -11,10 +11,10 @@ dynamoose.aws.sdk.config.update({});
 
 dynamoose.aws.ddb.local();
 
-//= ======================================================================================
-// CONFIGURA OS CAMPOS DA TABELA DO BANCO DE DADOS
-//= ======================================================================================
-const entregador = new dynamoose.Schema(
+//= =========================================================================
+// CONFIGURA OS CAMPOS DA TABELA DO BANCO DE
+//= =========================================================================
+const deliverymans = new dynamoose.Schema(
   {
     id: {
       type: String,
@@ -50,4 +50,4 @@ const entregador = new dynamoose.Schema(
   {},
 );
 
-module.exports = dynamoose.model('entregador', entregador);
+module.exports = dynamoose.model('deliveryman', deliverymans);

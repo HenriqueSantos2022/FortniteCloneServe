@@ -11,10 +11,10 @@ dynamoose.aws.sdk.config.update({});
 
 dynamoose.aws.ddb.local();
 
-//= =========================================================================
-// CONFIGURA OS CAMPOS DA TABELA DO BANCO DE
-//= =========================================================================
-const customers = new dynamoose.Schema(
+//= ======================================================================================
+// CONFIGURA OS CAMPOS DA TABELA DO BANCO DE DADOS
+//= ======================================================================================
+const client = new dynamoose.Schema(
   {
     id: {
       type: String,
@@ -50,4 +50,4 @@ const customers = new dynamoose.Schema(
   {},
 );
 
-module.exports = dynamoose.model('client', customers);
+module.exports = dynamoose.model('client', client);

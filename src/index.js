@@ -30,8 +30,8 @@ app.get('/health-check', (req, res) => {
 //= =====================================================================
 app.use('/users/', require('./routes/users'));
 app.use('/restaurants/', require('./routes/restaurants'));
-app.use('/customers/', require('./routes/customers'));
-app.use('/couriers/', require('./routes/couriers'));
+app.use('/deliverymans', require('./routes/deliverymans'));
+app.use('/customers', require('./routes/customers'));
 
 //= =====================================================================
 // CONFIGURA RESPOSTA PADRAO QUANDO NAO EXISTE O ENDPOINT

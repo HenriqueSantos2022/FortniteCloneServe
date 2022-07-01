@@ -1,10 +1,10 @@
 const express = require('express');
-const customers = require('../controllers/customers');
+const Client = require('../controllers/customers');
 
 const router = express.Router();
-router.post('/', customers.create);
-router.get('/:id', customers.get);
-router.put('/:id', customers.update);
-router.delete('/:id', customers.delete);
-// router.get('/list/:userId', customers.list);
+router.post('/', Client.create);
+router.get('/:id', Client.get);
+router.put('/:id', Client.update);
+router.delete('/:id', Client.delete);
+// router.get('/list/:userId', Client.list);
 module.exports = router;
