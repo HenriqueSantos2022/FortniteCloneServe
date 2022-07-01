@@ -1,7 +1,7 @@
 //= ====================================================================
 // IMPORTS
 //= ====================================================================
-const Client = require('../models/deliverymans');
+const Client = require('../models/customers');
 const Utils = require('../utils/utils');
 //= ====================================================================
 // EXPORTS CRUD

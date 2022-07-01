@@ -1,562 +1,480 @@
 {
-	"info": {
-		"_postman_id": "e33cfab0-9613-4c6f-b37d-fe8c5a16b8f0",
-		"name": "Wefood",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20872563"
-	},
-	"item": [
-		{
-			"name": "Customers",
-			"item": [
-				{
-					"name": "Create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Claudio5",
-									"type": "text"
-								},
-								{
-									"key": "datadenascimento",
-									"value": "5/13/1974",
-									"type": "text"
-								},
-								{
-									"key": "idade",
-									"value": "28",
-									"type": "text"
-								},
-								{
-									"key": "rg",
-									"value": "33.644.479-5",
-									"type": "text"
-								},
-								{
-									"key": "cpf",
-									"value": "977.659.010-10",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "dfhejhaerhergerheaj",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:3000/customers",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"customers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{server-local}}/customers/ae761861-2edb-4ec0-b613-e0e585dc6722",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"customers",
-								"ae761861-2edb-4ec0-b613-e0e585dc6722"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Claudio06",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{server-local}}/customers/ae761861-2edb-4ec0-b613-e0e585dc6722",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"customers",
-								"ae761861-2edb-4ec0-b613-e0e585dc6722"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": {
-							"raw": "{{server-local}}/customers/de51154a-f3da-4f52-9268-fa197dafd365",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"customers",
-								"de51154a-f3da-4f52-9268-fa197dafd365"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Restaurants",
-			"item": [
-				{
-					"name": "Create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Restaurante 005",
-									"type": "text"
-								},
-								{
-									"key": "cnpj",
-									"value": "MY-CNPJ",
-									"type": "text"
-								},
-								{
-									"key": "owner",
-									"value": "OWNER-ID",
-									"type": "text"
-								},
-								{
-									"key": "idade",
-									"value": "18",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "ddk.claudio@gmail.com",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{server-local}}/restaurants/",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"restaurants",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{server-local}}/restaurants/1b2832a0-4190-45cf-b126-b0f22ef55dcc",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"restaurants",
-								"1b2832a0-4190-45cf-b126-b0f22ef55dcc"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Restaurante 777",
-									"type": "text"
-								},
-								{
-									"key": "cnpj",
-									"value": "MY-CNPJ",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "owner",
-									"value": "OWNER-ID",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{server-local}}/restaurants/1b2832a0-4190-45cf-b126-b0f22ef55dcc",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"restaurants",
-								"1b2832a0-4190-45cf-b126-b0f22ef55dcc"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{server-local}}/restaurants/1b2832a0-4190-45cf-b126-b0f22ef55dcc",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"restaurants",
-								"1b2832a0-4190-45cf-b126-b0f22ef55dcc"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "List",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{server-local}}/restaurants/list/:id",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"restaurants",
-								"list",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": null
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "Signup",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "         Claudio            Fernandes      ",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "senha-segura",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "ddk.claudio.003@outlook.com",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{server-local}}/users/signup",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"users",
-								"signup"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Signin",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "         Claudio            Fernandes      ",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "        senha-segura        ",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "ddk.claudi12o@outlook.com",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{server-local}}/users/signin",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"users",
-								"signin"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Deliverymans",
-			"item": [
-				{
-					"name": "Create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Arlindo Cruz",
-									"type": "text"
-								},
-								{
-									"key": "datadenascimento",
-									"value": "16/01/2001",
-									"type": "text"
-								},
-								{
-									"key": "idade",
-									"value": "23",
-									"type": "text"
-								},
-								{
-									"key": "rg",
-									"value": "388851326",
-									"type": "text"
-								},
-								{
-									"key": "cpf",
-									"value": "46825695894",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{server-local}}/deliverymans",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"deliverymans"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{server-local}}/deliverymans/1c6ec659-f9c9-466c-838d-ed9a6131bc75",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"deliverymans",
-								"1c6ec659-f9c9-466c-838d-ed9a6131bc75"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Arlindo Cruz Santos ",
-									"type": "text"
-								},
-								{
-									"key": "email ",
-									"value": "MariaElizia@gmail.com",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "datadenascimento",
-									"value": "16/01/2001",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "name ",
-									"value": "Arlindo Cruz Santos ",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "rg",
-									"value": "399951327",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "cpf",
-									"value": "12325695896",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{server-local}}/deliverymans/1c6ec659-f9c9-466c-838d-ed9a6131bc75",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"deliverymans",
-								"1c6ec659-f9c9-466c-838d-ed9a6131bc75"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": {
-							"raw": "{{server-local}}/deliverymans/1c6ec659-f9c9-466c-838d-ed9a6131bc75",
-							"host": [
-								"{{server-local}}"
-							],
-							"path": [
-								"deliverymans",
-								"1c6ec659-f9c9-466c-838d-ed9a6131bc75"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Index",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{server-local}}/",
-					"host": [
-						"{{server-local}}"
-					],
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Health Check",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{server-local}}/health-check",
-					"host": [
-						"{{server-local}}"
-					],
-					"path": [
-						"health-check"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "e33cfab0-9613-4c6f-b37d-fe8c5a16b8f0",
+    "name": "Wefood",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20872563"
+  },
+  "item": [
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Claudio5",
+                  "type": "text"
+                },
+                {
+                  "key": "datadenascimento",
+                  "value": "5/13/1974",
+                  "type": "text"
+                },
+                {
+                  "key": "idade",
+                  "value": "28",
+                  "type": "text"
+                },
+                {
+                  "key": "rg",
+                  "value": "33.644.479-5",
+                  "type": "text"
+                },
+                {
+                  "key": "cpf",
+                  "value": "977.659.010-10",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "dfhejhaerhergerheaj",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/customers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["customers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server-local}}/customers/ae761861-2edb-4ec0-b613-e0e585dc6722",
+              "host": ["{{server-local}}"],
+              "path": ["customers", "ae761861-2edb-4ec0-b613-e0e585dc6722"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Claudio06",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server-local}}/customers/ae761861-2edb-4ec0-b613-e0e585dc6722",
+              "host": ["{{server-local}}"],
+              "path": ["customers", "ae761861-2edb-4ec0-b613-e0e585dc6722"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{server-local}}/customers/de51154a-f3da-4f52-9268-fa197dafd365",
+              "host": ["{{server-local}}"],
+              "path": ["customers", "de51154a-f3da-4f52-9268-fa197dafd365"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Restaurants",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Restaurante 005",
+                  "type": "text"
+                },
+                {
+                  "key": "cnpj",
+                  "value": "MY-CNPJ",
+                  "type": "text"
+                },
+                {
+                  "key": "owner",
+                  "value": "OWNER-ID",
+                  "type": "text"
+                },
+                {
+                  "key": "idade",
+                  "value": "18",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "ddk.claudio@gmail.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server-local}}/restaurants/",
+              "host": ["{{server-local}}"],
+              "path": ["restaurants", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server-local}}/restaurants/1b2832a0-4190-45cf-b126-b0f22ef55dcc",
+              "host": ["{{server-local}}"],
+              "path": ["restaurants", "1b2832a0-4190-45cf-b126-b0f22ef55dcc"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Restaurante 777",
+                  "type": "text"
+                },
+                {
+                  "key": "cnpj",
+                  "value": "MY-CNPJ",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "owner",
+                  "value": "OWNER-ID",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server-local}}/restaurants/1b2832a0-4190-45cf-b126-b0f22ef55dcc",
+              "host": ["{{server-local}}"],
+              "path": ["restaurants", "1b2832a0-4190-45cf-b126-b0f22ef55dcc"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{server-local}}/restaurants/1b2832a0-4190-45cf-b126-b0f22ef55dcc",
+              "host": ["{{server-local}}"],
+              "path": ["restaurants", "1b2832a0-4190-45cf-b126-b0f22ef55dcc"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server-local}}/restaurants/list/:id",
+              "host": ["{{server-local}}"],
+              "path": ["restaurants", "list", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "         Claudio            Fernandes      ",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "senha-segura",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "ddk.claudio.003@outlook.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server-local}}/users/signup",
+              "host": ["{{server-local}}"],
+              "path": ["users", "signup"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Signin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "         Claudio            Fernandes      ",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "        senha-segura        ",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "ddk.claudi12o@outlook.com",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server-local}}/users/signin",
+              "host": ["{{server-local}}"],
+              "path": ["users", "signin"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Deliverymans",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Arlindo Cruz",
+                  "type": "text"
+                },
+                {
+                  "key": "datadenascimento",
+                  "value": "16/01/2001",
+                  "type": "text"
+                },
+                {
+                  "key": "idade",
+                  "value": "23",
+                  "type": "text"
+                },
+                {
+                  "key": "rg",
+                  "value": "388851326",
+                  "type": "text"
+                },
+                {
+                  "key": "cpf",
+                  "value": "46825695894",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server-local}}/deliverymans",
+              "host": ["{{server-local}}"],
+              "path": ["deliverymans"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server-local}}/deliverymans/1c6ec659-f9c9-466c-838d-ed9a6131bc75",
+              "host": ["{{server-local}}"],
+              "path": ["deliverymans", "1c6ec659-f9c9-466c-838d-ed9a6131bc75"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Arlindo Cruz Santos ",
+                  "type": "text"
+                },
+                {
+                  "key": "email ",
+                  "value": "MariaElizia@gmail.com",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "datadenascimento",
+                  "value": "16/01/2001",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "name ",
+                  "value": "Arlindo Cruz Santos ",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "rg",
+                  "value": "399951327",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "cpf",
+                  "value": "12325695896",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server-local}}/deliverymans/1c6ec659-f9c9-466c-838d-ed9a6131bc75",
+              "host": ["{{server-local}}"],
+              "path": ["deliverymans", "1c6ec659-f9c9-466c-838d-ed9a6131bc75"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
+            "url": {
+              "raw": "{{server-local}}/deliverymans/1c6ec659-f9c9-466c-838d-ed9a6131bc75",
+              "host": ["{{server-local}}"],
+              "path": ["deliverymans", "1c6ec659-f9c9-466c-838d-ed9a6131bc75"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Index",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server-local}}/",
+          "host": ["{{server-local}}"],
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{server-local}}/health-check",
+          "host": ["{{server-local}}"],
+          "path": ["health-check"]
+        }
+      },
+      "response": []
+    }
+  ]
 }
