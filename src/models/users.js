@@ -51,6 +51,6 @@ const User = new dynamoose.Schema(
 );
 
 module.exports = dynamoose.model('users', User, {
-  create: false, //https://v1.dynamoosejs.com/api/config/
+  create: false, // https://v1.dynamoosejs.com/api/config/
   waitForActive: false,
 });

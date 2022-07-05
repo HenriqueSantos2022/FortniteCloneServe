@@ -50,6 +50,6 @@ const Restaurant = new dynamoose.Schema(
 );
 
 module.exports = dynamoose.model('restaurants', Restaurant, {
-  create: false, //https://v1.dynamoosejs.com/api/config/
+  create: false, // https://v1.dynamoosejs.com/api/config/
   waitForActive: false,
 });

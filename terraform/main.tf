@@ -72,3 +72,26 @@ resource "aws_dynamodb_table" "users" {
 
 
 
+resource "aws_dynamodb_table" "deliveryman" {
+    name = "deliveryman"
+    attribute {
+        name = "id"
+        type = "S"
+    }
+   attribute {
+    name = "owner"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name            = "deliveryman-owner-gsi"
+    hash_key        = "owner"
+    projection_type = "ALL"
+    write_capacity  = 1
+    read_capacity   = 1
+  }
+
+    hash_key       = "id"
+    read_capacity  = 1
+    write_capacity = 1
+}

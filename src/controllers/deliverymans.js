@@ -67,7 +67,9 @@ exports.list = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
 
-    res.json({ todo: new Date(), deliverymanid: req.params.deliverymanid });
+    const deliveryman = await Deliveryman.query('owner').eq(req.params.owner).exec();
+
+    res.json({ deliveryman });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
