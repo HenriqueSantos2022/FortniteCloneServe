@@ -27,6 +27,10 @@ const Deliveryman = new dynamoose.Schema(
       required: true,
     },
 
+    email: {
+      type: String,
+      required: true,
+    },
     datadenascimento: {
       type: String,
       required: true,
