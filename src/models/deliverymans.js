@@ -54,7 +54,7 @@ const Deliveryman = new dynamoose.Schema(
   {},
 );
 
-module.exports = dynamoose.model('deliveryman', Deliveryman, {
+module.exports = dynamoose.model('deliverymans', Deliveryman, {
   create: false, // https://v1.dynamoosejs.com/api/config/
   waitForActive: false,
 });

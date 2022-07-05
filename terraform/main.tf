@@ -73,7 +73,7 @@ resource "aws_dynamodb_table" "users" {
 
 
 resource "aws_dynamodb_table" "deliveryman" {
-    name = "deliveryman"
+    name = "deliverymans"
     attribute {
         name = "id"
         type = "S"
