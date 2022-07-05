@@ -104,3 +104,7 @@ dist
 .tern-port
 
 *.zip
+
+# TERRAFORM
+.terraform
+.terraform.*

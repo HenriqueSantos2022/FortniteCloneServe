@@ -73,7 +73,9 @@ exports.list = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
 
-    res.json({ todo: new Date(), userId: req.params.userId });
+    const restaurantes = await Restaurants.query('owner').eq(req.params.owner).exec();
+
+    res.json({ restaurantes });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;

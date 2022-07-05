@@ -1,7 +1,7 @@
 //= ====================================================================
 // IMPORTS
 //= ====================================================================
-const Client = require('../models/customers');
+const Customer = require('../models/customers');
 const Utils = require('../utils/utils');
 //= ====================================================================
 // EXPORTS CRUD
@@ -10,7 +10,7 @@ exports.create = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
 
-    const client = await Client.create(req.body);
+    const client = await Customer.create(req.body);
     res.json({ client });
   } catch (err) {
     const error = new Error(err);
@@ -24,7 +24,7 @@ exports.get = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
 
-    const client = await Client.get(req.params.id);
+    const client = await Customer.get(req.params.id);
     res.json({ client });
   } catch (err) {
     const error = new Error(err);
@@ -39,7 +39,7 @@ exports.update = async (req, res, next) => {
     Utils.sanitize(req.params);
     Utils.sanitize(req.body);
 
-    const client = await Client.update({ id: req.params.id }, req.body);
+    const client = await Customer.update({ id: req.params.id }, req.body);
     res.json({ client });
   } catch (err) {
     const error = new Error(err);
@@ -53,7 +53,7 @@ exports.delete = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
 
-    await Client.delete(req.params.id);
+    await Customer.delete(req.params.id);
     res.json({});
   } catch (err) {
     const error = new Error(err);
@@ -66,8 +66,8 @@ exports.delete = async (req, res, next) => {
 exports.list = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
-
-    res.json({ todo: new Date(), Clientid: req.params.clientid });
+    const customers = await Customer.query('owner').eq(req.params.owner).exec();
+    res.json({ customers });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;

@@ -3,6 +3,7 @@
 //= =========================================================================
 
 const dynamoose = require('dynamoose');
+const { v4: uuidv4 } = require('uuid');
 
 //= =========================================================================
 // CONFIGURA HOST DO BANCO DE DADOS
@@ -20,9 +21,18 @@ dynamoose.aws.ddb.local();
 //= =========================================================================
 const User = new dynamoose.Schema(
   {
-    email: {
+    id: {
       type: String,
       hashKey: true,
+      default: uuidv4,
+    },
+    email: {
+      type: String,
+      required: true,
+      index: {
+        name: 'users-email-gsi',
+        global: true,
+      },
     },
 
     name: {
@@ -40,4 +50,7 @@ const User = new dynamoose.Schema(
   },
 );
 
-module.exports = dynamoose.model('User', User);
+module.exports = dynamoose.model('users', User, {
+  create: false, //https://v1.dynamoosejs.com/api/config/
+  waitForActive: false,
+});

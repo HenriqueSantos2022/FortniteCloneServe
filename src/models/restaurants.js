@@ -35,10 +35,13 @@ const Restaurant = new dynamoose.Schema(
       type: String,
       required: true,
     },
-
     owner: {
       type: String,
       required: true,
+      index: {
+        name: 'restaurants-owner-gsi',
+        global: true,
+      },
     },
   },
   {
@@ -46,4 +49,7 @@ const Restaurant = new dynamoose.Schema(
   },
 );
 
-module.exports = dynamoose.model('Restaurant', Restaurant);
+module.exports = dynamoose.model('restaurants', Restaurant, {
+  create: false, //https://v1.dynamoosejs.com/api/config/
+  waitForActive: false,
+});

@@ -14,7 +14,7 @@ dynamoose.aws.ddb.local();
 //= ======================================================================================
 // CONFIGURA OS CAMPOS DA TABELA DO BANCO DE DADOS
 //= ======================================================================================
-const client = new dynamoose.Schema(
+const Customer = new dynamoose.Schema(
   {
     id: {
       type: String,
@@ -50,4 +50,7 @@ const client = new dynamoose.Schema(
   {},
 );
 
-module.exports = dynamoose.model('client', client);
+module.exports = dynamoose.model('customers', Customer, {
+  create: false, //https://v1.dynamoosejs.com/api/config/
+  waitForActive: false,
+});

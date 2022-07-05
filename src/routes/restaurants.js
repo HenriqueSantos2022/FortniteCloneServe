@@ -6,6 +6,6 @@ router.post('/', Restaurants.create);
 router.get('/:id', Restaurants.get);
 router.put('/:id', Restaurants.update);
 router.delete('/:id', Restaurants.delete);
-router.get('/list/:userId', Restaurants.list);
+router.get('/list/:owner', Restaurants.list);
 
 module.exports = router;

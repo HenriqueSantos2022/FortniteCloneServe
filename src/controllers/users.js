@@ -47,8 +47,7 @@ exports.signup = async (req, res, next) => {
 exports.signin = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
-
-    const user = await Users.get(req.body.email);
+    const user = await Users.query('email').eq(req.body.email).exec();
     if (user && (await bcrypt.compareSync(req.body.password, user.password))) {
       delete user.password;
       res.json({ user });
