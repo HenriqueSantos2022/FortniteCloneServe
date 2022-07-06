@@ -10,8 +10,6 @@ const Utils = require('../utils/utils');
 //= ====================================================================
 exports.signup = async (req, res, next) => {
   try {
-    Utils.sanitize(req.body);
-
     // Realizando limpeza antes de validar
     Utils.sanitize(req.body);
 
@@ -24,7 +22,8 @@ exports.signup = async (req, res, next) => {
     }
 
     // Se o email ja for cadastardo retornar msg de erro e terminar
-    if (await Users.get(req.body.email)) {
+    const list = await Users.query('email').eq(req.body.email).exec();
+    if (list.length > 0) {
       const error = new Error('email ja cadastrado');
       error.status = error.statusCode;
       next(error);
