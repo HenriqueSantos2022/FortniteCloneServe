@@ -50,6 +50,14 @@ const Deliveryman = new dynamoose.Schema(
       type: String,
       required: true,
     },
+    owner: {
+      type: String,
+      required: true,
+      index: {
+        name: 'deliveryman-owner-gsi',
+        global: true,
+      },
+    },
   },
   {},
 );

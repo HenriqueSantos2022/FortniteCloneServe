@@ -10,8 +10,13 @@ const Utils = require('../utils/utils');
 exports.create = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
-    const deliveryman = await Deliveryman.create(req.body);
-    res.json({ deliveryman });
+    const list = await Deliveryman.query('owner').eq(req.body.owner).exec();
+    if (list.length === 0) {
+      const deliveryman = await Deliveryman.create(req.body);
+      res.json({ deliveryman });
+    } else {
+      res.json({ deliveryman: list[0] });
+    }
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
