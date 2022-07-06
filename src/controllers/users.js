@@ -47,10 +47,10 @@ exports.signup = async (req, res, next) => {
 exports.signin = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
-    const user = await Users.query('email').eq(req.body.email).exec();
-    if (user && (await bcrypt.compareSync(req.body.password, user.password))) {
-      delete user.password;
-      res.json({ user });
+    const list = await Users.query('email').eq(req.body.email).exec();
+    if (list.length > 0 && (await bcrypt.compareSync(req.body.password, list[0].password))) {
+      delete list[0].password;
+      res.json({ user: list[0] });
     } else {
       const error = new Error('Usuário não encontardo, e-mail ou senha não conferem');
       error.status = 200;
