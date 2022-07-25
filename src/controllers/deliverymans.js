@@ -10,12 +10,19 @@ const Utils = require('../utils/utils');
 exports.create = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
-    const list = await Deliveryman.query('owner').eq(req.body.owner).exec();
-    if (list.length === 0) {
-      const deliveryman = await Deliveryman.create(req.body);
-      res.json({ deliveryman });
+
+    if (Utils.validateEmail(req.body.email)) {
+      const list = await Deliveryman.query('owner').eq(req.body.owner).exec();
+      if (list.length === 0) {
+        const deliveryman = await Deliveryman.create(req.body);
+        res.json({ deliveryman });
+      } else {
+        res.json({ deliveryman: list[0] });
+      }
     } else {
-      res.json({ deliveryman: list[0] });
+      const error = new Error('Email não e valido');
+      error.status = error.statusCode;
+      next(error);
     }
   } catch (err) {
     const error = new Error(err);

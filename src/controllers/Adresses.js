@@ -1,8 +1,9 @@
 //= ====================================================================
 // IMPORTS
 //= ====================================================================
-const Customer = require('../models/customers');
+const Adresses = require('../models/Adresses');
 const Utils = require('../utils/utils');
+
 //= ====================================================================
 // EXPORTS CRUD
 //= ====================================================================
@@ -10,11 +11,11 @@ exports.create = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
 
-    const customers = await Customer.create(req.body);
-    res.json({ customers });
+    const adresses = await Adresses.create(req.body);
+    res.json({ adresses });
   } catch (err) {
     const error = new Error(err);
-    error.status = error.statusCode;
+    error.status = error.StatusCode;
     error.code = err.code;
     next(error);
   }
@@ -24,11 +25,11 @@ exports.get = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
 
-    const customers = await Customer.get(req.params.id);
-    res.json({ customers });
+    const adresses = await Adresses.get(req.params.id);
+    res.json({ adresses });
   } catch (err) {
     const error = new Error(err);
-    error.status = error.statusCode;
+    error.status = error.StatusCode;
     error.code = err.code;
     next(error);
   }
@@ -39,11 +40,11 @@ exports.update = async (req, res, next) => {
     Utils.sanitize(req.params);
     Utils.sanitize(req.body);
 
-    const customers = await Customer.update({ id: req.params.id }, req.body);
-    res.json({ customers });
+    const adresses = await Adresses.update({ id: req.params.id }, req.body);
+    res.json({ adresses });
   } catch (err) {
     const error = new Error(err);
-    error.status = error.statusCode;
+    error.status = error.StatusCode;
     error.code = err.code;
     next(error);
   }
@@ -51,13 +52,13 @@ exports.update = async (req, res, next) => {
 
 exports.delete = async (req, res, next) => {
   try {
-    Utils.sanitize(req.params);
+    Utils.sanitize(res.params);
 
-    await Customer.delete(req.params.id);
+    await Adresses.delete(req.body.id);
     res.json({});
   } catch (err) {
     const error = new Error(err);
-    error.status = error.statusCode;
+    error.status = error.StatusCode;
     error.code = err.code;
     next(error);
   }
@@ -67,11 +68,11 @@ exports.list = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
 
-    const customers = await Customer.query('id').eq(req.params.id).exec();
-    res.json({ customers });
+    const adresses = await Adresses.query('owner').eq(req.body.email).exec();
+    res.json({ adresses });
   } catch (err) {
     const error = new Error(err);
-    error.status = error.statusCode;
+    error.status = error.StatusCode;
     error.code = err.code;
     next(error);
   }

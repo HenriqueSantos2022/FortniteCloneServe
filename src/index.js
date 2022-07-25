@@ -32,6 +32,9 @@ app.use('/users/', require('./routes/users'));
 app.use('/restaurants/', require('./routes/restaurants'));
 app.use('/deliverymans', require('./routes/deliverymans'));
 app.use('/customers', require('./routes/customers'));
+app.use('/products', require('./routes/products'));
+app.use('/sales', require('./routes/sales'));
+app.use('/vehicles', require('./routes/vehicles'));
 
 //= =====================================================================
 // CONFIGURA RESPOSTA PADRAO QUANDO NAO EXISTE O ENDPOINT

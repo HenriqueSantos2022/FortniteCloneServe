@@ -10,11 +10,17 @@ const Utils = require('../utils/utils');
 exports.create = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
+
     if (Utils.validateEmail(req.body.email)) {
-      const restaurant = await Restaurants.create(req.body);
-      res.json({ restaurant });
+      const list = await Restaurants.query('owner').eq(req.body.owner).exec();
+      if (list.length === 0) {
+        const restaurants = await Restaurants.create(req.body);
+        res.json({ restaurants });
+      } else {
+        res.json({ restaurants: list[0] });
+      }
     } else {
-      const error = new Error('email não e valido');
+      const error = new Error('Email não e valido');
       error.status = error.statusCode;
       next(error);
     }
@@ -30,8 +36,8 @@ exports.get = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
 
-    const restaurant = await Restaurants.get(req.params.id);
-    res.json({ restaurant });
+    const restaurants = await Restaurants.get(req.params.id);
+    res.json({ restaurants });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
@@ -45,8 +51,8 @@ exports.update = async (req, res, next) => {
     Utils.sanitize(req.params);
     Utils.sanitize(req.body);
 
-    const restaurant = await Restaurants.update({ id: req.params.id }, req.body);
-    res.json({ restaurant });
+    const restaurants = await Restaurants.update({ id: req.params.id }, req.body);
+    res.json({ restaurants });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
@@ -73,9 +79,8 @@ exports.list = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
 
-    const restaurantes = await Restaurants.query('owner').eq(req.params.owner).exec();
-
-    res.json({ restaurantes });
+    const restaurants = await Restaurants.query('owner').eq(req.params.owner).exec();
+    res.json({ restaurants });
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
