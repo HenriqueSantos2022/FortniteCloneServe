@@ -12,13 +12,16 @@ exports.create = async (req, res, next) => {
     Utils.sanitize(req.body);
 
     if (Utils.validateEmail(req.body.email)) {
-      const list = await Restaurants.query('owner').eq(req.body.owner).exec();
-      if (list.length === 0) {
-        const restaurants = await Restaurants.create(req.body);
-        res.json({ restaurants });
-      } else {
-        res.json({ restaurants: list[0] });
+      if ('useAppDeliverers' in req.body) {
+        req.body.useAppDeliverers = req.body.useAppDeliverers === 'true';
       }
+
+      if ('useOwnDeliverers' in req.body) {
+        req.body.useOwnDeliverers = req.body.useOwnDeliverers === 'true';
+      }
+
+      const restaurants = await Restaurants.create(req.body);
+      res.json({ restaurants });
     } else {
       const error = new Error('Email não e valido');
       error.status = error.statusCode;
@@ -50,7 +53,13 @@ exports.update = async (req, res, next) => {
   try {
     Utils.sanitize(req.params);
     Utils.sanitize(req.body);
+    if ('useAppDeliverers' in req.body) {
+      req.body.useAppDeliverers = req.body.useAppDeliverers === 'true';
+    }
 
+    if ('useOwnDeliverers' in req.body) {
+      req.body.useOwnDeliverers = req.body.useOwnDeliverers === 'true';
+    }
     const restaurants = await Restaurants.update({ id: req.params.id }, req.body);
     res.json({ restaurants });
   } catch (err) {

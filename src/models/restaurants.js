@@ -35,6 +35,16 @@ const Restaurants = new dynamoose.Schema(
       type: String,
       required: true,
     },
+    useAppDeliverers: {
+      type: Boolean,
+      required: true,
+      default: true,
+    },
+    useOwnDeliverers: {
+      type: Boolean,
+      required: true,
+      default: true,
+    },
     owner: {
       type: String,
       required: true,
