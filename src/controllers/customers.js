@@ -9,9 +9,13 @@ const Utils = require('../utils/utils');
 exports.create = async (req, res, next) => {
   try {
     Utils.sanitize(req.body);
-
-    const customers = await Customer.create(req.body);
-    res.json({ customers });
+    const list = await Customer.query('owner').eq(req.body.owner).exec();
+    if (list.length === 0) {
+      const customer = await Customer.create(req.body);
+      res.json({ customer });
+    } else {
+      res.json({ customer: list[0] });
+    }
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;

@@ -46,6 +46,14 @@ const Customer = new dynamoose.Schema(
       type: String,
       required: true,
     },
+    owner: {
+      type: String,
+      required: true,
+      index: {
+        name: 'customers-owner-gsi',
+        global: true,
+      },
+    },
   },
   {},
 );
