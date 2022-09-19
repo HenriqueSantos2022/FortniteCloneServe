@@ -6,3 +6,8 @@ router.post('/signup', Users.signup);
 router.post('/signin', Users.signin);
 
 module.exports = router;
+
+function name(params) {
+  lo;
+  function name(params) {}
+}

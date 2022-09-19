@@ -7,4 +7,5 @@ router.get('/:id', Restaurants.get);
 router.put('/:id', Restaurants.update);
 router.delete('/:id', Restaurants.delete);
 router.get('/list/:owner', Restaurants.list);
+router.get('/Add deliverymans', Restaurants.create);
 module.exports = router;

@@ -2,6 +2,7 @@
 // IMPORTS
 //= ====================================================================
 const Restaurants = require('../models/restaurants');
+const RestaurantsDeliveymans = require('../models/restaurants&deliveymans');
 const Utils = require('../utils/utils');
 
 //= ====================================================================
@@ -27,6 +28,24 @@ exports.create = async (req, res, next) => {
       error.status = error.statusCode;
       next(error);
     }
+  } catch (err) {
+    const error = new Error(err);
+    error.status = error.statusCode;
+    error.code = err.code;
+    next(error);
+  }
+};
+
+exports.create = async (req, res, next) => {
+  try {
+    // LIMPEZA
+    Utils.sanitize(req.body);
+
+    // CADASTRAR ENTREGADOR PARA RESTAURANTE//
+    const restaurantsDeliveymans = await RestaurantsDeliveymans.create(req.body);
+    res.json({ restaurantsDeliveymans });
+
+    // CRIAR FUNÇÃO FUNÇÃO PARA RETORNAR ERROR
   } catch (err) {
     const error = new Error(err);
     error.status = error.statusCode;
