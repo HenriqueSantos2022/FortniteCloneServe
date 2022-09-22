@@ -1,4 +1,4 @@
-Algoritmo "Dados_pessoas_vetores"
+Algoritmo "Dados_pessoas_vet"
 
 Var
 
