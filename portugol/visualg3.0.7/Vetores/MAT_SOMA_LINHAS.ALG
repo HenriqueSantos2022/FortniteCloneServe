@@ -14,7 +14,7 @@ escreval("Qual a quantidade de colunas da matriz?")
 leia(N)
 
   para i de 0 ate M-1 faca
-    escreval("Digite os elementos da", i+1, "linha: ")
+    escreval("Digite os elementos da", i+1, " linha: ")
     para j de 0 ate N-1 faca
     leia(Mat[i, j])
 
