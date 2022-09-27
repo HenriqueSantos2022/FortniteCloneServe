@@ -1,4 +1,4 @@
-Algoritmo "Pro_vet_linhas"
+Algoritmo "Vet_linhas"
 
 
 Var
