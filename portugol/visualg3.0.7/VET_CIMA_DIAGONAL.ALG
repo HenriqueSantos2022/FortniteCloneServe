@@ -1,4 +1,4 @@
-Algoritmo "cima_diagonal"
+Algoritmo "Vet_cima_diagonal"
 
 Var
 
