@@ -1,4 +1,4 @@
-Algoritmo "soma_matrizes""
+Algoritmo "soma_matrizes"
 
 Var
 M, N, i, j : inteiro
