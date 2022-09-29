@@ -19,7 +19,7 @@ dynamoose.aws.ddb.local();
 //= =========================================================================
 // CONFIGURA OS CAMPOS DA TABELA
 //= =========================================================================
-const RestaurantsDeliveymans = new dynamoose.Schema(
+const Adddeliverymans = new dynamoose.Schema(
   {
     id: {
       type: String,
@@ -36,7 +36,7 @@ const RestaurantsDeliveymans = new dynamoose.Schema(
       type: String,
       required: true,
       index: {
-        name: 'restaurantsdeliveymans-owner-gsi',
+        name: 'restaurants-owner-gsi',
         global: true,
       },
     },
@@ -46,7 +46,7 @@ const RestaurantsDeliveymans = new dynamoose.Schema(
   },
 );
 
-module.exports = dynamoose.model('restaurants', RestaurantsDeliveymans, {
+module.exports = dynamoose.model('restaurants', Adddeliverymans, {
   create: false, // https://v1.dynamoosejs.com/api/config/
   waitForActive: false,
 });

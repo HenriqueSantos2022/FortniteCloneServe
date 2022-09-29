@@ -2,7 +2,7 @@
 // IMPORTS
 //= ====================================================================
 const Restaurants = require('../models/restaurants');
-const RestaurantsDeliveymans = require('../models/restaurants&deliveymans');
+const Adddeliverymans = require('../models/Adddeliverymans');
 const Utils = require('../utils/utils');
 
 //= ====================================================================
@@ -42,8 +42,8 @@ exports.create = async (req, res, next) => {
     Utils.sanitize(req.body);
 
     // CADASTRAR ENTREGADOR PARA RESTAURANTE//
-    const restaurantsDeliveymans = await RestaurantsDeliveymans.create(req.body);
-    res.json({ restaurantsDeliveymans });
+    const adddeliverymans = await Adddeliverymans.create(req.body);
+    res.json({ adddeliverymans });
 
     // CRIAR FUNÇÃO FUNÇÃO PARA RETORNAR ERROR
   } catch (err) {

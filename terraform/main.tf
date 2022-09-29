@@ -22,8 +22,8 @@ resource "aws_dynamodb_table" "restaurants" {
     write_capacity = 1
 }
 
-resource "aws_dynamodb_table" "restaurantsdeliveymans" {
-    name = "restaurantsdeliveymans"
+resource "aws_dynamodb_table" "Adddeliverymans" {
+    name = "Adddeliverymans"
     attribute {
         name = "id"
         type = "S"
@@ -34,7 +34,7 @@ resource "aws_dynamodb_table" "restaurantsdeliveymans" {
   }
 
   global_secondary_index {
-    name            = "restaurantsdeliveymans-owner-gsi"
+    name            = "restaurants-owner-gsi"
     hash_key        = "owner"
     projection_type = "ALL"
     write_capacity  = 1
