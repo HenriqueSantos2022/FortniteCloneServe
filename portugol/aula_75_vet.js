@@ -29,9 +29,20 @@ const main = async () => {
   let i = 0;
   let j = 0;
 
-  let matA = [[0, 1, 2, 3][(0, 1, 2, 3)]];
-  let matB = [[0, 1, 2, 3][(0, 1, 2, 3)]];
-  let matC = [[0, 1, 2, 3][(0, 1, 2, 3)]];
+  let matA = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ];
+
+  let matB = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ];
+
+  let matC = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ];
 
   // escreval("Quantas linhas vai ter cada matriz? ")
   // leia(m)
@@ -85,6 +96,16 @@ const main = async () => {
   for (let i = 0; i <= M - 1; i++) {
     for (let j = 0; j <= N - 1; j++) {
       matC[i][j] = matA[i][j] + matB[i][j];
+
+      for (let i = 0; i <= M - 1; i++) {
+        for (let j = 0; j <= N - 1; j++) {
+          console.log('MATRIZ SOMA =', matC[i][j]);
+        }
+      }
+
+      log.table(matA);
+      log.table(matB);
+      log.table(matC);
     }
   }
 
@@ -94,12 +115,6 @@ const main = async () => {
   // escreva(matC[i, j], " ")
   // fimpara
   // escreval
-
-  for (let i = 0; i <= M - 1; i++) {
-    for (let j = 0; j <= N - 1; j++) {
-      console.log('MATRIZ SOMA =', matC[i][j]);
-    }
-  }
 
   console.log('Fim do Programa');
 };
