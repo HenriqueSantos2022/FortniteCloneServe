@@ -136,7 +136,8 @@ const main = async () => {
 
   contHomens = N - contMulheres;
   console.log('Numero de homens = ', contHomens);
-
+  console.table(vetorAlturas);
+  console.table(vetorGenero);
   console.log('Fim do Programa');
 };
 
