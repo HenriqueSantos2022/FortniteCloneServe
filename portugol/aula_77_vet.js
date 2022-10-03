@@ -26,7 +26,7 @@ const main = async () => {
   let N = 0;
   let i = 0;
   let QuantPares = 0;
-  let vetorM = [];
+  let vetorM = [0, 1, 2, 3];
 
   // Inicio
   // escreval ("Quantos numeros voce vai digitar?")
