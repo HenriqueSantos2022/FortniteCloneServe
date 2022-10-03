@@ -28,10 +28,8 @@ const main = async () => {
 
   let N = 0;
   let i = 0;
-  let soma = 0;
-  let posMaior = 0;
   let media = 0;
-  let vetorNome = [0, 1, 2, 3, 4];
+  let vetorNome = [];
   let vetNota1 = [0, 1, 2, 3, 4];
   let vetNota2 = [0, 1, 2, 3, 4];
 
@@ -68,7 +66,9 @@ const main = async () => {
       console.log(vetorNome[i]);
     }
   }
-
+  console.table(vetorNome);
+  console.table(vetNota1);
+  console.table(vetNota2);
   console.log('Fim do Programa!!!');
 };
 main();
