@@ -1,40 +1,38 @@
-Algoritmo "problema_vet_maisvelho"
+Algoritmo "Vet_linhas"
+
 
 Var
 
-maior, posMaior : inteiro
-N, i :inteiro
-vetNomes : vetor [0..9] de caractere
-vetIdades : vetor [0..9]de inteiro
+N, i, j : inteiro
+MaiorE : real
+mat : vetor [0..4, 0..4] de real
 
 Inicio
 
-    escreval("Quantas pessoas voce vai digitar? ")
-    leia(N)
+   escreval("Qual a ordem da matriz? ")
+   leia(N)
+
+   para i de 0 ate N-1 faca
+      para j de 0 ate N-1 faca
+           escreva("Elemento[", i, ",", j,"]:")
+           leia(mat[i, j])
+   fimpara
+fimpara
+
+    escreval("MAIOR ELEMENTO DE CADA LINHA: ")
 
     para i de 0 ate N-1 faca
-    escreval("Dados da ", i+1, "a pessoa: ")
-       escreva("Nome:")
-    leia(VetNomes[i])
-       escreva("Idade:")
-    leia(Vetidades[i])
+         MaiorE <- mat[i, 0]
 
+       para j de 1 ate N-1 faca
+         se mat[i, j] > MaiorE entao
+            MaiorE <- mat[i, j]
+     fimse
+  fimpara
+  
+    escreval(MaiorE)
+    
 fimpara
-
-   maior <- vetIdades[0]
-   posMaior <- 0
-   
-   para i de 0 ate N-1 faca
-     se vetIdades[i] > maior entao
-        maior <- VetIdades[i]
-        posMaior <- i
-   fimse
-fimpara
-
-   escreval("PESSOA MAIS VELHA: ", VetNomes[posMaior])
-
-
 
 
 Fimalgoritmo
-

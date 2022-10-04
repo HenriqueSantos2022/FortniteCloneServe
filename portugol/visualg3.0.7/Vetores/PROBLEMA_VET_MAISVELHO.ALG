@@ -13,7 +13,7 @@ Inicio
     leia(N)
 
     para i de 0 ate N-1 faca
-    escreval("Dados da ", i+1, "a pessoa: ")
+    escreval("Dados da ", i+1, " a pessoa: ")
        escreva("Nome:")
     leia(VetNomes[i])
        escreva("Idade:")
@@ -25,13 +25,13 @@ fimpara
    posMaior <- 0
    
    para i de 0 ate N-1 faca
-     se vetIdades > maior entao
+     se vetIdades[i] > maior entao
         maior <- VetIdades[i]
         posMaior <- i
    fimse
 fimpara
 
-   escreval("PESSOA MAIS VELHA:", VetNomes[posMaior])
+   escreval("PESSOA MAIS VELHA : ", VetNomes[posMaior])
 
 
 
